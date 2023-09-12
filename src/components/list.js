@@ -1,10 +1,12 @@
 import React from "react";
 
-function List({data}){
+function List({posts}){
   return(
-    <a>
-      {data}
-    </a>
+    <div className="">
+      <ul>
+        {posts.map((item)=> <li> {item.title} </li> )}
+      </ul>
+    </div>
   );
 }
 
