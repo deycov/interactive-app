@@ -1,14 +1,15 @@
 import { fetchData } from '../fetch';
 import { useEffect } from "react";
 
-function  useListPost(data, setData, url){
-  
+function useListPost(setData, url){  
   useEffect(() => {
     try{
-      fetchData(url)
-      .then((posts) => setData(posts));
+      fetchData(url).then(async (res) =>{
+        await setData(res);
+      })
     }catch(err){
-      console.error(" | Hubo un error | " + err);
+      //console.error(" | Hubo un error | " + err);
+      console.error(" ERROOOOOOOOOOOOOOOOOOOOOOR ");
     }
   },[]);
 }

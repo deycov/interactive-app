@@ -6,12 +6,11 @@ import AppUi from "./appUi";
 //const URL_PRODUCT = `https://jsonplaceholder.typicode.com/posts/${ID}`;
 const URL_PRODUCTS = "https://jsonplaceholder.typicode.com/posts/";
 
-function App () {
-  const [posts, setPosts] = React.useState([]);
-  useListPost(posts, setPosts, URL_PRODUCTS);
+function  App () {
+  
   return(  
     <AppUi
-      posts={posts}
+      url={URL_PRODUCTS}
     />
   );
 }

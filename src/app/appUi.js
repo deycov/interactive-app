@@ -5,13 +5,13 @@ const UiTheme = styled.div`
   background: #303030;
 `;
 
-function AppUi ({posts}){
+function AppUi ({url}){
   return(
-    <UiTheme>
-      <List>
-        { posts }
-      </List>
-    </UiTheme>
+    <div className="container mx-auto px-5">
+      <List 
+        url={url}
+      />
+    </div>
   )
 }
 

@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import useListPost from "../hooks/useListPost";
 
 
-function List({posts}){
+function List({url}){
+  const [posts, setPosts] = useState([]);
+  useListPost(setPosts,url)
+
   return(
-    <div className="">
-      <ul>
-        { 
+    <div className="grid grid-cols-4 gap-4">
+        { posts &&
           posts.map((item) => 
-            <li> 
+            <div> 
               {item.title} 
-            </li> 
+            </div> 
           )
-        
         }
-      </ul>
     </div>
   );
 }
