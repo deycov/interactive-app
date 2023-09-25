@@ -1,4 +1,4 @@
-import { fetchData } from './fetch';
+import { fetchData } from '../fetch';
 import { useEffect } from "react";
 
 function  useListPost(data, setData, url){
@@ -7,7 +7,6 @@ function  useListPost(data, setData, url){
     try{
       fetchData(url)
       .then((posts) => setData(posts));
-
     }catch(err){
       console.error(" | Hubo un error | " + err);
     }
